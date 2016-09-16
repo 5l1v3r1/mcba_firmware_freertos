@@ -25,6 +25,8 @@
       <itemPath>../FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
       <itemPath>../FreeRTOS/Source/list.c</itemPath>
       <itemPath>configuration_bits.c</itemPath>
+      <itemPath>spi.c</itemPath>
+      <itemPath>../FreeRTOS/Source/queue.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -78,16 +80,16 @@
         <property key="enable-all-optimizations" value="true"/>
         <property key="enable-int-promotion" value="false"/>
         <property key="enable-multi-bank-stack-model" value="true"/>
-        <property key="enable-ob" value="true"/>
-        <property key="enable-od" value="true"/>
+        <property key="enable-ob" value="false"/>
+        <property key="enable-od" value="false"/>
         <property key="enable-om" value="true"/>
         <property key="enable-on" value="true"/>
-        <property key="enable-op" value="true"/>
-        <property key="enable-opa" value="true"/>
-        <property key="enable-or" value="true"/>
+        <property key="enable-op" value="false"/>
+        <property key="enable-opa" value="false"/>
+        <property key="enable-or" value="false"/>
         <property key="enable-os" value="true"/>
-        <property key="enable-ot" value="true"/>
-        <property key="enable-ou" value="true"/>
+        <property key="enable-ot" value="false"/>
+        <property key="enable-ou" value="false"/>
         <property key="enable-ow" value="true"/>
         <property key="extra-include-directories"
                   value=".;../../../../opt/microchip/mplabc18/v3.40/h;../FreeRTOS/Source/include;../FreeRTOS/Source/portable/MPLAB/PIC18F"/>

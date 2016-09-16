@@ -136,12 +136,8 @@ extern volatile TCB_t * volatile pxCurrentTCB;
 #define portBIT_SET		( ( uint8_t ) 1 )
 #define portBIT_CLEAR	( ( uint8_t ) 0 )
 
-/*
- * The serial port ISR's are defined in serial.c, but are called from portable
- * as they use the same vector as the tick ISR.
- */
-void vSerialTxISR( void );
-void vSerialRxISR( void );
+void vSpiISR( void );
+static void prvSpiISR( void );
 
 /*
  * Perform hardware setup to enable ticks.
@@ -567,24 +563,12 @@ static void prvLowInterrupt( void )
 		_endasm
 	}
 
-//	/* Was the interrupt a byte being received? */
-//	if( PIR1bits.RCIF )
-//	{
-//		_asm
-//			goto vSerialRxISR
-//		_endasm
-//	}
-//
-//	/* Was the interrupt the Tx register becoming empty? */
-//	if( PIR1bits.TXIF )
-//	{
-//		if( PIE1bits.TXIE )
-//		{
-//			_asm
-//				goto vSerialTxISR
-//			_endasm
-//		}
-//	}
+	if( INTCONbits.INT0IF )
+	{
+		_asm
+			goto prvSpiISR
+		_endasm
+	}
 }
 #pragma code
 
@@ -609,6 +593,19 @@ static void prvTickISR( void )
 		/* Switch to the highest priority task that is ready to run. */
 		vTaskSwitchContext();
 	}
+
+	portRESTORE_CONTEXT();
+}
+
+static void prvSpiISR( void )
+{
+	/* Interrupts must have been enabled for the ISR to fire, so we have to 
+	save the context with interrupts enabled. */
+	portSAVE_CONTEXT( portGLOBAL_INTERRUPT_FLAG );
+
+    INTCONbits.INT0IF = 0;
+    
+    vSpiISR();
 
 	portRESTORE_CONTEXT();
 }

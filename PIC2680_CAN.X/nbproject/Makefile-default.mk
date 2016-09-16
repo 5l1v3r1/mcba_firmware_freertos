@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c ../FreeRTOS/Source/tasks.c ../FreeRTOS/Source/portable/MPLAB/PIC18F/port.c ../FreeRTOS/Source/portable/MemMang/heap_1.c ../FreeRTOS/Source/list.c configuration_bits.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c ../FreeRTOS/Source/tasks.c ../FreeRTOS/Source/portable/MPLAB/PIC18F/port.c ../FreeRTOS/Source/portable/MemMang/heap_1.c ../FreeRTOS/Source/list.c configuration_bits.c spi.c ../FreeRTOS/Source/queue.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/381897321/tasks.o ${OBJECTDIR}/_ext/724060968/port.o ${OBJECTDIR}/_ext/167578668/heap_1.o ${OBJECTDIR}/_ext/381897321/list.o ${OBJECTDIR}/configuration_bits.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/381897321/tasks.o.d ${OBJECTDIR}/_ext/724060968/port.o.d ${OBJECTDIR}/_ext/167578668/heap_1.o.d ${OBJECTDIR}/_ext/381897321/list.o.d ${OBJECTDIR}/configuration_bits.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/381897321/tasks.o ${OBJECTDIR}/_ext/724060968/port.o ${OBJECTDIR}/_ext/167578668/heap_1.o ${OBJECTDIR}/_ext/381897321/list.o ${OBJECTDIR}/configuration_bits.o ${OBJECTDIR}/spi.o ${OBJECTDIR}/_ext/381897321/queue.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/381897321/tasks.o.d ${OBJECTDIR}/_ext/724060968/port.o.d ${OBJECTDIR}/_ext/167578668/heap_1.o.d ${OBJECTDIR}/_ext/381897321/list.o.d ${OBJECTDIR}/configuration_bits.o.d ${OBJECTDIR}/spi.o.d ${OBJECTDIR}/_ext/381897321/queue.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/381897321/tasks.o ${OBJECTDIR}/_ext/724060968/port.o ${OBJECTDIR}/_ext/167578668/heap_1.o ${OBJECTDIR}/_ext/381897321/list.o ${OBJECTDIR}/configuration_bits.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/381897321/tasks.o ${OBJECTDIR}/_ext/724060968/port.o ${OBJECTDIR}/_ext/167578668/heap_1.o ${OBJECTDIR}/_ext/381897321/list.o ${OBJECTDIR}/configuration_bits.o ${OBJECTDIR}/spi.o ${OBJECTDIR}/_ext/381897321/queue.o
 
 # Source Files
-SOURCEFILES=main.c ../FreeRTOS/Source/tasks.c ../FreeRTOS/Source/portable/MPLAB/PIC18F/port.c ../FreeRTOS/Source/portable/MemMang/heap_1.c ../FreeRTOS/Source/list.c configuration_bits.c
+SOURCEFILES=main.c ../FreeRTOS/Source/tasks.c ../FreeRTOS/Source/portable/MPLAB/PIC18F/port.c ../FreeRTOS/Source/portable/MemMang/heap_1.c ../FreeRTOS/Source/list.c configuration_bits.c spi.c ../FreeRTOS/Source/queue.c
 
 
 CFLAGS=
@@ -143,6 +143,22 @@ ${OBJECTDIR}/configuration_bits.o: configuration_bits.c  nbproject/Makefile-${CN
 	@${DEP_GEN} -d ${OBJECTDIR}/configuration_bits.o 
 	@${FIXDEPS} "${OBJECTDIR}/configuration_bits.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
+${OBJECTDIR}/spi.o: spi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi.o.d 
+	@${RM} ${OBJECTDIR}/spi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -I"." -I"../../../../opt/microchip/mplabc18/v3.40/h" -I"../FreeRTOS/Source/include" -I"../FreeRTOS/Source/portable/MPLAB/PIC18F" -ms -oa- -Ls  -I ${MP_CC_DIR}/../h  -fo ${OBJECTDIR}/spi.o   spi.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/spi.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/381897321/queue.o: ../FreeRTOS/Source/queue.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/381897321" 
+	@${RM} ${OBJECTDIR}/_ext/381897321/queue.o.d 
+	@${RM} ${OBJECTDIR}/_ext/381897321/queue.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1 -p$(MP_PROCESSOR_OPTION) -I"." -I"../../../../opt/microchip/mplabc18/v3.40/h" -I"../FreeRTOS/Source/include" -I"../FreeRTOS/Source/portable/MPLAB/PIC18F" -ms -oa- -Ls  -I ${MP_CC_DIR}/../h  -fo ${OBJECTDIR}/_ext/381897321/queue.o   ../FreeRTOS/Source/queue.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/381897321/queue.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/381897321/queue.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -191,6 +207,22 @@ ${OBJECTDIR}/configuration_bits.o: configuration_bits.c  nbproject/Makefile-${CN
 	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -I"." -I"../../../../opt/microchip/mplabc18/v3.40/h" -I"../FreeRTOS/Source/include" -I"../FreeRTOS/Source/portable/MPLAB/PIC18F" -ms -oa- -Ls  -I ${MP_CC_DIR}/../h  -fo ${OBJECTDIR}/configuration_bits.o   configuration_bits.c 
 	@${DEP_GEN} -d ${OBJECTDIR}/configuration_bits.o 
 	@${FIXDEPS} "${OBJECTDIR}/configuration_bits.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/spi.o: spi.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi.o.d 
+	@${RM} ${OBJECTDIR}/spi.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -I"." -I"../../../../opt/microchip/mplabc18/v3.40/h" -I"../FreeRTOS/Source/include" -I"../FreeRTOS/Source/portable/MPLAB/PIC18F" -ms -oa- -Ls  -I ${MP_CC_DIR}/../h  -fo ${OBJECTDIR}/spi.o   spi.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/spi.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
+	
+${OBJECTDIR}/_ext/381897321/queue.o: ../FreeRTOS/Source/queue.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/381897321" 
+	@${RM} ${OBJECTDIR}/_ext/381897321/queue.o.d 
+	@${RM} ${OBJECTDIR}/_ext/381897321/queue.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -p$(MP_PROCESSOR_OPTION) -I"." -I"../../../../opt/microchip/mplabc18/v3.40/h" -I"../FreeRTOS/Source/include" -I"../FreeRTOS/Source/portable/MPLAB/PIC18F" -ms -oa- -Ls  -I ${MP_CC_DIR}/../h  -fo ${OBJECTDIR}/_ext/381897321/queue.o   ../FreeRTOS/Source/queue.c 
+	@${DEP_GEN} -d ${OBJECTDIR}/_ext/381897321/queue.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/381897321/queue.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c18 
 	
 endif
 
