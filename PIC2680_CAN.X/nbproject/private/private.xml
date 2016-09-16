@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/opt/microchip/mplabc18/v3.40/bin/LKR/18f2680_g.lkr</file>
+            <file>file:/home/remol/mcba_firmware/PIC2680_CAN.X/main.c</file>
+            <file>file:/home/remol/mcba_firmware/PIC2680_CAN.X/configuration_bits.c</file>
+            <file>file:/home/remol/mcba_firmware/FreeRTOS/Source/portable/MemMang/heap_1.c</file>
+            <file>file:/home/remol/mcba_firmware/FreeRTOS/Source/tasks.c</file>
+            <file>file:/home/remol/mcba_firmware/FreeRTOS/Source/portable/MPLAB/PIC18F/portmacro.h</file>
+            <file>file:/home/remol/mcba_firmware/PIC2680_CAN.X/FreeRTOSConfig.h</file>
+            <file>file:/home/remol/mcba_firmware/FreeRTOS/Source/portable/MPLAB/PIC18F/port.c</file>
+            <file>file:/home/remol/mcba_firmware/PIC2680_CAN.X/18f2680.lkr</file>
+            <file>file:/home/remol/mcba_firmware/FreeRTOS/Source/list.c</file>
+        </group>
+    </open-files>
+</project-private>
